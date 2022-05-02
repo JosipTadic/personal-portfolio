@@ -12,6 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   width: 27%;
   height: 100vh;
+  top: 0;
   position: fixed;
   background-color: #102542;
   z-index: 5;
