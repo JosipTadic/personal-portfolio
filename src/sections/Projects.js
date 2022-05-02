@@ -300,9 +300,9 @@ const Projects = () => {
             <ProjectsCardSubheader>
               <b>*App still in development</b>
               <br />
-              An application containing info about biggest 500 crypto
-              currencies. Each currency has its own page with charts containing
-              price and volume info with different options and additional info.
+              An app containing info about biggest 500 crypto
+              currencies. Each currency has charts containing
+              price and volume info with different options.
             </ProjectsCardSubheader>
 
             <ProjectsCardFooterWrapper>

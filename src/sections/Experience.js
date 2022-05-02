@@ -258,7 +258,7 @@ const Experience = () => {
                 ref={fifth}
                 className={inViewFifth ? "typing-effect" : ""}
               >
-                Work Experience
+                Experience
               </ExperienceHeader>
             </div>
           </ExperienceGridHeader>

@@ -18,6 +18,11 @@ const Container = styled.div`
   @media (max-width: 650px) {
     width: 100%;
     transform: translateX(100%);
+    -webkit-transition: transform .65s ease;
+    -moz-transition: transform .65s ease;
+    -ms-transition: transform .65s ease;
+    -o-transition: transform .65s ease;
+    transition: transform .65s ease;
     row-gap: 0.05rem;
     justify-content: space-evenly;
   }
@@ -302,10 +307,21 @@ const MenuButton = styled.button`
   display: none;
   z-index: 10;
   position: fixed;
-  right: 15px;
-  top: 15px;
+  right: 1%;
+  top: 1%;
+  font-size: 1.2rem;
+  background: transparent;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  width: 75px;
+  height: 30px;
+  color: white;
+  &:hover{
+    border: 2px solid gold;
+  }
+  
   @media (max-width: 650px) {
-    display: flex;
+    display: inline-block;
   }
 `;
 
@@ -322,11 +338,11 @@ const Header = ({
       <div>
         {showMenu ? (
           <MenuButton onClick={() => setShowMenu(false)}>
-            Close menu!
+            Menu!
           </MenuButton>
         ) : (
           <MenuButton onClick={() => setShowMenu(true)}>
-            Open menu!
+            Menu!
           </MenuButton>
         )}
       </div>
@@ -358,21 +374,22 @@ const Header = ({
         </IconContainer>
         <LinkWrapper>
           <ExperienceLink
-            href="#experience"
+            href="#experience" 
+            onClick={() => setShowMenu(false)}
             experienceActive={experienceActive}
           >
             <Subheader>Experience</Subheader>
           </ExperienceLink>
-          <SkillsLink href="#skills" skillsActive={skillsActive}>
+          <SkillsLink href="#skills" onClick={() => setShowMenu(false)} skillsActive={skillsActive}>
             <Subheader>Skills</Subheader>
           </SkillsLink>
-          <ProjectLink href="#projects" projectActive={projectActive}>
+          <ProjectLink href="#projects" onClick={() => setShowMenu(false)} projectActive={projectActive}>
             <Subheader>Projects</Subheader>
           </ProjectLink>
-          <EducationLink href="#education" educationActive={educationActive}>
+          <EducationLink href="#education" onClick={() => setShowMenu(false)} educationActive={educationActive}>
             <Subheader>Education</Subheader>
           </EducationLink>
-          <ContactLink href="#contact" contactActive={contactActive}>
+          <ContactLink href="#contact" onClick={() => setShowMenu(false)} contactActive={contactActive}>
             <Subheader>Contact</Subheader>
           </ContactLink>
         </LinkWrapper>

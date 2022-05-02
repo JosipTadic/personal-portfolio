@@ -285,10 +285,6 @@ const Skills = () => {
               Different testing principles
               <br />
               <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </SkillsCardSubheader>
             <SkillsCardFooter></SkillsCardFooter>
             <SkillsCardFooterInfo></SkillsCardFooterInfo>
@@ -310,7 +306,6 @@ const Skills = () => {
               Improving SEO
               <br />
               Data Visualization
-              <br />
               <br />
               <br />
             </SkillsCardSubheader>
