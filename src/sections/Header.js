@@ -26,6 +26,11 @@ const Container = styled.div`
     row-gap: 0.05rem;
     justify-content: space-evenly;
   }
+  @media only screen and (min-device-width: 480px) 
+                   and (max-device-width: 950px) 
+                   and (max-device-height: 600px) 
+                   and (orientation: landscape) {
+}
 `;
 const Title = styled.h1`
   font-size: 3rem;
@@ -349,7 +354,7 @@ const Header = ({
       <Container className={showMenu ? "open-menu": "close-menu"}>
         <Title>JOSIP TADIĆ</Title>
         <Subtitle>Web developer</Subtitle>
-        <img src={profilna} alt="profile" />
+        <img className="image-landscape-only" src={profilna} alt="profile" />
         <TextHeader>
           Master's in Information Technologies, experience in Development,
           QA/Support. Interested in Frontend development or full stack.

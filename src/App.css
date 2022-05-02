@@ -16,7 +16,6 @@ html {
 html:focus-within {
   scroll-behavior: smooth;
 }
-
 @media (max-width: 1800px) {
   html {
     font-size: 14px;
@@ -37,7 +36,6 @@ html:focus-within {
     font-size: 10px;
   }
 }
-
 
 body {
   background-color: black;
@@ -113,4 +111,15 @@ a {
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: goldenrod; }
+}
+@media only screen and (min-device-width: 480px) 
+                   and (max-device-width: 950px) 
+                   and (max-device-height: 600px) 
+                   and (orientation: landscape) {
+                    html {
+                      font-size: 7px;
+                    }
+                    .image-landscape-only {
+                      width: 25%;
+                    }
 }
