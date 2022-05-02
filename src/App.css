@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: goldenrod black;
+  scrollbar-width: 12px;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (max-width: 1800px) {
+  html {
+    font-size: 14px;
+  }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 1600px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media (max-width: 1500px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 800px) {
+  html {
+    font-size: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+body {
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(218, 165, 32, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(218, 165, 32, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(218, 165, 32, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+  border-radius: 10px;
+  border: 2px ridge black;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  border: 2px ridge goldenrod;
+}
+.open-menu {
+  transform: translateX(0) !important;
+}
+.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.typing-effect {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid goldenrod; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3s steps(50, end),
+    blink-caret .75s step-end infinite;
 }
 
-.App-link {
-  color: #61dafb;
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: goldenrod; }
 }
