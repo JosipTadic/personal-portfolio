@@ -85,7 +85,7 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   border: 2px ridge goldenrod;
 }
-.open-menu {
+.open-menu { 
   transform: translateX(0) !important;
 }
 .animate {
