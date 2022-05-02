@@ -11,7 +11,7 @@ const Container = styled.div`
   row-gap: 1rem;
   flex-direction: column;
   width: 27%;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   background-color: #102542;
   z-index: 5;

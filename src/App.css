@@ -120,6 +120,6 @@ a {
                       font-size: 7px;
                     }
                     .image-landscape-only {
-                      width: 25%;
+                      display: none;
                     }
 }
