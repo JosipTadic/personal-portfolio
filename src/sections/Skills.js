@@ -265,9 +265,7 @@ const Skills = () => {
               <br />
               SQL
               <br />
-              C++
-              <br />
-              C#
+              C++/C#
             </SkillsCardSubheader>
             <SkillsCardFooter></SkillsCardFooter>
             <SkillsCardFooterInfo></SkillsCardFooterInfo>

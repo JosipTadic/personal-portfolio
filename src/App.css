@@ -36,7 +36,11 @@ html:focus-within {
     font-size: 10px;
   }
 }
-
+@media (max-width: 380px) {
+  html {
+    font-size: 8px;
+  }
+}
 body {
   background-color: black;
   font-family: "Montserrat", sans-serif;
