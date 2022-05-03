@@ -42,6 +42,9 @@ const ContactContext = styled.div`
   display: flex;
   height: 100%; 
   @media (max-width: 650px) {
+    height: 90%; 
+    flex-direction: column;
+    justify-content: space-around;
   }
 `;
 const ContactAnimationWrapper = styled.div`
@@ -83,7 +86,7 @@ const ContactCardSubheader = styled.h3`
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
-  line-height: 2rem;
+  line-height: 2.4rem;
   opacity: 0;
   transform: translateY(-50px);
   -webkit-transition: all 0.4s ease;
@@ -170,9 +173,9 @@ const Contact = () => {
               className={inViewSecond ? "animate" : ""}
             >
               My info: <br />
-              📧 josiptadic96@hotmail.com <br />
+              <a href="mailto:josiptadic96@hotmail.com?subject=Hello">📧 josiptadic96@hotmail.com </a><br />
               📍 Pula, Croatia <br />
-              📞 +385 95 864 7919 <br />
+              <a href="tel:+385958647919">📞 +385 95 864 7919 </a><br />
               <br />
               Or use LinkedIn link you see in the header/menu.
             </ContactCardSubheader>
