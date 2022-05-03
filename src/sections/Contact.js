@@ -33,8 +33,6 @@ const ContactHeader = styled.h1`
   margin: 0.5rem 0;
 `;
 const ContactText = styled.div`
-  width: 100%;
-  height: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,16 +40,14 @@ const ContactText = styled.div`
 `;
 const ContactContext = styled.div`
   display: flex;
-  width: 100%;
-  height: 88%;
+  height: 100%;
   @media (max-width: 650px) {
     flex-direction: column;
   }
 `;
 const ContactAnimationWrapper = styled.div`
   display: flex;
-  width: 100%;
-  height: 92%;
+  flex-direction: column;
   opacity: 0;
   align-items: center;
   justify-content: center;
@@ -65,8 +61,6 @@ const ContactAnimationWrapper = styled.div`
 `;
 const ContactAnimationLink = styled.a`
   display: flex;
-  height: 100%;
-  width: 40%;
 `;
 const ContactCardHeader = styled.h2`
   font-size: 2rem;
@@ -149,9 +143,19 @@ const Contact = () => {
             >
               Contact
             </ContactHeader>
-            </div>
+          </div>
         </ContactCardHeaderWrapper>
+        
         <ContactContext>
+          <ContactAnimationWrapper
+            ref={first}
+            className={inViewFirst ? "animate" : ""}
+          >
+            <ContactAnimationLink href="mailto:josiptadic96@hotmail.com?subject=Hello">
+              {View}
+            </ContactAnimationLink>
+            Click on animation to send a mail.
+          </ContactAnimationWrapper>
           <ContactText>
             <ContactCardHeader
               ref={third}
@@ -163,20 +167,15 @@ const Contact = () => {
               ref={second}
               className={inViewSecond ? "animate" : ""}
             >
-              Click on animation to send a mail. <br />
-              josiptadic96@hotmail.com <br />
+              My info: <br />
+              📧 josiptadic96@hotmail.com <br />
+              📍 Pula, Croatia <br />
+              📞 +385 95 864 7919 <br />
               <br />
-              Or use LinkedIn link you see in the header/menu.
+              Or use LinkedIn link you see in the header/menu. <br />
+              In sections below you will find more information about me 👇
             </ContactCardSubheader>
           </ContactText>
-          <ContactAnimationWrapper
-            ref={first}
-            className={inViewFirst ? "animate" : ""}
-          >
-            <ContactAnimationLink href="mailto:josiptadic96@hotmail.com?subject=Hello">
-              {View}
-            </ContactAnimationLink>
-          </ContactAnimationWrapper>
         </ContactContext>
       </ContactContainer>
     </ContactFlexContainer>

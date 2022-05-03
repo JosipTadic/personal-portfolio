@@ -113,6 +113,11 @@ const ProjectsGridThird = styled.div`
     -ms-grid-column: 1;
     -ms-grid-column-span: 0;
   }
+  @media (max-width: 1100px) {
+    justify-content: space-evenly;
+    padding: 0.25rem;
+    row-gap: 0.25rem;
+  }
   @media (max-width: 650px) {
     justify-content: space-between;
     padding: 0.25rem;
@@ -148,6 +153,11 @@ const ProjectsGridSecond = styled.div`
     -ms-grid-row-span: 1;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
+  }
+  @media (max-width: 1100px) {
+    justify-content: space-evenly;
+    padding: 0.25rem;
+    row-gap: 0.25rem;
   }
   @media (max-width: 650px) {
     justify-content: space-between;
@@ -185,6 +195,11 @@ const ProjectsGridFirst = styled.div`
     -ms-grid-column: 3;
     -ms-grid-column-span: 2;
   }
+  @media (max-width: 1100px) {
+    justify-content: space-evenly;
+    padding: 0.25rem;
+    row-gap: 0.25rem;
+  }
   @media (max-width: 650px) {
     justify-content: space-between;
     padding: 0.25rem;
@@ -219,7 +234,8 @@ const ProjectsCardSubheader = styled.h3`
   line-height: 2rem;
   opacity: 0.95;
   @media (max-width: 1100px) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    line-height: 1.75rem;
   }
 `;
 const ProjectsCardFooter = styled.h4`
@@ -244,6 +260,9 @@ const ProjectsCardFooterInfo = styled.div`
   @media (max-width: 650px) {
     flex-direction: column;
   }
+  @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
+    font-size: 1rem;
+  }
 `;
 const LinkCodeText = styled.p`
   font-size: 1.2rem;
@@ -251,6 +270,9 @@ const LinkCodeText = styled.p`
 `;
 const TechText = styled.p`
   padding: 3px;
+  @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
+    padding: 1.5px;
+  }
 `;
 const TechSpan = styled.span`
   display: inline-block;
@@ -261,6 +283,10 @@ const TechSpan = styled.span`
   &:hover {
     background: #035e7b;
     color: black;
+  }
+  @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
+    border: 0.1rem solid goldenrod;
+    margin: 0.15rem;
   }
 `;
 const Projects = () => {
@@ -300,9 +326,9 @@ const Projects = () => {
             <ProjectsCardSubheader>
               <b>*App still in development</b>
               <br />
-              An app containing info about biggest 500 crypto
-              currencies. Each currency has charts containing
-              price and volume info with different options.
+              An app containing info about biggest 500 crypto currencies. Each
+              currency has charts containing price and volume info with
+              different options.
             </ProjectsCardSubheader>
 
             <ProjectsCardFooterWrapper>
@@ -344,26 +370,26 @@ const Projects = () => {
 
             <ProjectsCardFooterInfo>
               <div>
-              <TechSpan>
-                <TechText>HTML</TechText>
-              </TechSpan>
-              <TechSpan>
-                <TechText>CSS</TechText>
-              </TechSpan>
-              <TechSpan>
-                <TechText>TypeScript</TechText>
-              </TechSpan>
+                <TechSpan>
+                  <TechText>HTML</TechText>
+                </TechSpan>
+                <TechSpan>
+                  <TechText>CSS</TechText>
+                </TechSpan>
+                <TechSpan>
+                  <TechText>TypeScript</TechText>
+                </TechSpan>
               </div>
               <div>
-              <TechSpan>
-                <TechText>React</TechText>
-              </TechSpan>
-              <TechSpan>
-                <TechText>Recharts</TechText>
-              </TechSpan>
-              <TechSpan>
-                <TechText>Bulma</TechText>
-              </TechSpan>
+                <TechSpan>
+                  <TechText>React</TechText>
+                </TechSpan>
+                <TechSpan>
+                  <TechText>Recharts</TechText>
+                </TechSpan>
+                <TechSpan>
+                  <TechText>Bulma</TechText>
+                </TechSpan>
               </div>
             </ProjectsCardFooterInfo>
           </ProjectsGridThird>

@@ -217,6 +217,17 @@ const ExperienceCardSubheader = styled.h3`
   text-align: center;
   line-height: 2.2rem;
   opacity: 0.98;
+  @media (max-width: 1600px) {
+    line-height: 2rem;
+    font-size: 1.4rem;
+  }
+  @media only screen and (min-device-width: 480px) 
+                   and (max-device-width: 950px) 
+                   and (max-device-height: 600px) 
+                   and (orientation: landscape) {
+                    line-height: 1.5rem;
+                    font-size: 1.25rem;
+  }
 `;
 const ExperienceCardFooter = styled.h4`
   font-size: 1.2rem;
@@ -270,8 +281,7 @@ const Experience = () => {
             <ExperienceCardSubheader>
               Working on various projects, most of the time working on frontend.{" "}
               <br /> Main technologies: <br />
-              React
-              <br />
+              React, 
               Typescript
             </ExperienceCardSubheader>
             <ExperienceCardFooter>
@@ -288,9 +298,9 @@ const Experience = () => {
             <ExperienceCardSubheader>
               Developing parts of the ERP/booking application with use of:{" "}
               <br />
-              .NET Core - C# <br />
-              Angular <br />
-              MariaDB <br />{" "}
+              .NET Core - C#, 
+              Angular, 
+              MariaDB{" "}
             </ExperienceCardSubheader>
             <ExperienceCardFooter>
               August, 2021 - November, 2021 <br />

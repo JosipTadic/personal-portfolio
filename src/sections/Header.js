@@ -19,24 +19,24 @@ const Container = styled.div`
   @media (max-width: 650px) {
     width: 100%;
     transform: translateX(100%);
-    -webkit-transition: transform .65s ease;
-    -moz-transition: transform .65s ease;
-    -ms-transition: transform .65s ease;
-    -o-transition: transform .65s ease;
-    transition: transform .65s ease;
+    -webkit-transition: transform 0.65s ease;
+    -moz-transition: transform 0.65s ease;
+    -ms-transition: transform 0.65s ease;
+    -o-transition: transform 0.65s ease;
+    transition: transform 0.65s ease;
     row-gap: 0.05rem;
     justify-content: space-evenly;
   }
-  @media only screen and (min-device-width: 480px) 
-                   and (max-device-width: 950px) 
-                   and (max-device-height: 600px) 
-                   and (orientation: landscape) {
-}
+  @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
+  }
 `;
 const Title = styled.h1`
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
+  @media (max-width: 1600px) {
+    font-size: 2.5rem;
+  }
   @media (max-width: 650px) {
     font-size: 3.4rem;
   }
@@ -46,6 +46,9 @@ const Subtitle = styled.h2`
   font-weight: 600;
   text-align: center;
   margin-bottom: 0.5rem;
+  @media (max-width: 1600px) {
+    font-size: 1.75rem;
+  }
   @media (max-width: 650px) {
     font-size: 2.5rem;
     margin-bottom: 0.25rem;
@@ -57,6 +60,11 @@ const TextHeader = styled.h3`
   text-align: center;
   line-height: 2rem;
   padding: 0 1.8rem;
+  @media (max-width: 1600px) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 0 0.25rem;
+  }
   @media (max-width: 650px) {
     font-size: 1.8rem;
     line-height: 2.33rem;
@@ -68,6 +76,10 @@ const Subheader = styled.h3`
   font-weight: 700;
   text-align: center;
   line-height: 2.5rem;
+  @media (max-width: 1600px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
   @media (max-width: 650px) {
     font-size: 2rem;
     line-height: 3rem;
@@ -308,6 +320,12 @@ const LinkPadding = styled.a`
     -o-transition: all 0.35s ease;
     transition: all 0.35s ease;
   }
+  @media (max-width: 1600px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 650px) {
+    font-size: 5rem;
+  }
 `;
 const MenuButton = styled.button`
   display: none;
@@ -322,10 +340,10 @@ const MenuButton = styled.button`
   width: 75px;
   height: 30px;
   color: white;
-  &:hover{
+  &:hover {
     border: 2px solid gold;
   }
-  
+
   @media (max-width: 650px) {
     display: inline-block;
   }
@@ -343,24 +361,20 @@ const Header = ({
     <>
       <div>
         {showMenu ? (
-          <MenuButton onClick={() => setShowMenu(false)}>
-            Menu!
-          </MenuButton>
+          <MenuButton onClick={() => setShowMenu(false)}>Menu!</MenuButton>
         ) : (
-          <MenuButton onClick={() => setShowMenu(true)}>
-            Menu!
-          </MenuButton>
+          <MenuButton onClick={() => setShowMenu(true)}>Menu!</MenuButton>
         )}
       </div>
-      <Container className={showMenu ? "open-menu": "close-menu"}>
+      <Container className={showMenu ? "open-menu" : "close-menu"}>
         <Title>JOSIP TADIĆ</Title>
         <Subtitle>Web developer</Subtitle>
         <img className="image-landscape-only" src={profilna} alt="profile" />
         <TextHeader>
-          Master's in Information Technologies, experience in Development,
-          QA/Support. Interested in Frontend development or full stack.
-          Preferably React(possibly Vue or Angular).
-          <br /> Using English and Croatian in business comunication.
+          Master's degree in IT, experience in Development, QA/Support.
+          Interested in Frontend development(React, Vue or Angular) or full
+          stack. Preferably remote. Using English and Croatian in business
+          communication.
         </TextHeader>
         <IconContainer>
           <LinkPadding
@@ -379,25 +393,41 @@ const Header = ({
           </LinkPadding>
         </IconContainer>
         <LinkWrapper>
+          <ContactLink
+            href="#contact"
+            onClick={() => setShowMenu(false)}
+            contactActive={contactActive}
+          >
+            <Subheader>Contact</Subheader>
+          </ContactLink>
           <ExperienceLink
-            href="#experience" 
+            href="#experience"
             onClick={() => setShowMenu(false)}
             experienceActive={experienceActive}
           >
             <Subheader>Experience</Subheader>
           </ExperienceLink>
-          <SkillsLink href="#skills" onClick={() => setShowMenu(false)} skillsActive={skillsActive}>
+          <SkillsLink
+            href="#skills"
+            onClick={() => setShowMenu(false)}
+            skillsActive={skillsActive}
+          >
             <Subheader>Skills</Subheader>
           </SkillsLink>
-          <ProjectLink href="#projects" onClick={() => setShowMenu(false)} projectActive={projectActive}>
+          <ProjectLink
+            href="#projects"
+            onClick={() => setShowMenu(false)}
+            projectActive={projectActive}
+          >
             <Subheader>Projects</Subheader>
           </ProjectLink>
-          <EducationLink href="#education" onClick={() => setShowMenu(false)} educationActive={educationActive}>
+          <EducationLink
+            href="#education"
+            onClick={() => setShowMenu(false)}
+            educationActive={educationActive}
+          >
             <Subheader>Education</Subheader>
           </EducationLink>
-          <ContactLink href="#contact" onClick={() => setShowMenu(false)} contactActive={contactActive}>
-            <Subheader>Contact</Subheader>
-          </ContactLink>
         </LinkWrapper>
       </Container>
     </>

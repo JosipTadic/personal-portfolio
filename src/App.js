@@ -39,6 +39,9 @@ function App() {
         contactActive={inViewContact}
       />
       <SnappingContainer>
+        <div ref={refContact}>
+          <Contact />
+        </div>
         <div ref={refExperience}>
           <Experience />
         </div>
@@ -50,9 +53,6 @@ function App() {
         </div>
         <div ref={refEducation}>
           <Education />
-        </div>
-        <div ref={refContact}>
-          <Contact />
         </div>
       </SnappingContainer>
     </>
