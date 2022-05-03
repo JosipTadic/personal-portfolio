@@ -40,9 +40,8 @@ const ContactText = styled.div`
 `;
 const ContactContext = styled.div`
   display: flex;
-  height: 100%;
+  height: 100%; 
   @media (max-width: 650px) {
-    flex-direction: column;
   }
 `;
 const ContactAnimationWrapper = styled.div`
@@ -61,6 +60,9 @@ const ContactAnimationWrapper = styled.div`
 `;
 const ContactAnimationLink = styled.a`
   display: flex;
+  @media (max-width: 650px) {
+    width: 55%;
+  }
 `;
 const ContactCardHeader = styled.h2`
   font-size: 2rem;
@@ -172,8 +174,7 @@ const Contact = () => {
               📍 Pula, Croatia <br />
               📞 +385 95 864 7919 <br />
               <br />
-              Or use LinkedIn link you see in the header/menu. <br />
-              In sections below you will find more information about me 👇
+              Or use LinkedIn link you see in the header/menu.
             </ContactCardSubheader>
           </ContactText>
         </ContactContext>
