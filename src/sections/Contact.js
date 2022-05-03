@@ -40,11 +40,12 @@ const ContactText = styled.div`
 `;
 const ContactContext = styled.div`
   display: flex;
-  height: 100%; 
+  height: 85%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
   @media (max-width: 650px) {
-    height: 90%; 
     flex-direction: column;
-    justify-content: space-around;
   }
 `;
 const ContactAnimationWrapper = styled.div`
