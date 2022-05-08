@@ -28,6 +28,9 @@ const Container = styled.div`
     justify-content: space-evenly;
   }
   @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
+    height: 110vh;
+    width: 27vw;
+    padding-bottom: 40px;
   }
 `;
 const Title = styled.h1`
