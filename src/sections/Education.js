@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
+import learnAnim from "../animations/codeAnimation.json";
+import { useLottie } from "lottie-react";
 
 const EducationContainer = styled.section`
   height: 100%;
@@ -21,7 +23,7 @@ const EducationFlexContainer = styled.div`
   height: 100vh;
   display: flex;
   scroll-snap-align: start;
-  background-color: black;
+
   color: snow;
 `;
 
@@ -44,26 +46,25 @@ const EducationGridContainer = styled.div`
     gap: 1.5rem 1.5rem;
   }
   @media (max-width: 650px) {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 0.2fr repeat(3, 1fr);
-      gap: 0px 0px;
-      grid-auto-flow: row;
-      grid-template-areas:
-        "education-grid-header"
-        "education-grid-third"
-        "education-grid-second"
-        "education-grid-first";
-    
-    
-    @media all and (-ms-high-contrast:none) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr repeat(3, 1fr);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "education-grid-header"
+      "education-grid-third"
+      "education-grid-second"
+      "education-grid-first";
+
+    @media all and (-ms-high-contrast: none) {
       .container {
         display: -ms-grid;
         -ms-grid-columns: 1fr;
         -ms-grid-rows: 0.2fr repeat(3, 1fr);
       }
+    }
   }
-}
 `;
 const EducationGridHeader = styled.div`
   display: flex;
@@ -216,6 +217,22 @@ const EducationCardFooterInfo = styled.p`
   text-align: center;
   opacity: 0.88;
 `;
+const Lotti = styled.div`
+  z-index: -1; // lowest in your page
+  position: absolute; // or static, depending on what you have
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10rem;
+  pointer-events: none;
+  @media (max-width: 650px) {
+    justify-content: center;
+    padding-right: 0;
+  }
+`;
 
 const Education = () => {
   const [fourth, inViewFourth] = useInView({
@@ -231,87 +248,96 @@ const Education = () => {
   const [first, inViewFirst] = useInView({
     threshold: 0.05,
   });
+  const options = {
+    animationData: learnAnim,
+    loop: true,
+    autoplay: true,
+  };
+  const { View } = useLottie(options);
   return (
-    <EducationFlexContainer>
-      <PseudoElement></PseudoElement>
-      <EducationContainer id="education">
-        <EducationGridContainer>
-          <EducationGridHeader>
-            <div>
-              <EducationHeader
-                ref={fourth}
-                className={inViewFourth ? "typing-effect" : ""}
+    <>
+      <EducationFlexContainer>
+        <PseudoElement></PseudoElement>
+        <EducationContainer id="education">
+          <EducationGridContainer>
+            <EducationGridHeader>
+              <div>
+                <EducationHeader
+                  ref={fourth}
+                  className={inViewFourth ? "typing-effect" : ""}
+                >
+                  Education
+                </EducationHeader>
+              </div>
+            </EducationGridHeader>
+            <EducationGridThird
+              ref={third}
+              className={inViewThird ? "animate" : ""}
+            >
+              <EducationCardHeader>Master</EducationCardHeader>
+              <EducationCardSubheader>
+                Faculty of Informatics Pula
+                <br />
+                Information Technologies
+              </EducationCardSubheader>
+              <EducationCardFooter>2019 - 2021</EducationCardFooter>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://fipu.unipu.hr/fipu/studijski_programi/diplomski_sveucilisni_studij_informatika"
               >
-                Education
-              </EducationHeader>
-            </div>
-          </EducationGridHeader>
-          <EducationGridThird
-            ref={third}
-            className={inViewThird ? "animate" : ""}
-          >
-            <EducationCardHeader>Master</EducationCardHeader>
-            <EducationCardSubheader>
-              Faculty of Informatics Pula
-              <br />
-              Information Technologies
-            </EducationCardSubheader>
-            <EducationCardFooter>2019 - 2021</EducationCardFooter>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://fipu.unipu.hr/fipu/studijski_programi/diplomski_sveucilisni_studij_informatika"
+                <EducationCardFooterInfo>
+                  Click here for more info.
+                </EducationCardFooterInfo>
+              </a>
+            </EducationGridThird>
+            <EducationGridSecond
+              ref={second}
+              className={inViewSecond ? "animate" : ""}
             >
-              <EducationCardFooterInfo>
-                Click here for more info.
-              </EducationCardFooterInfo>
-            </a>
-          </EducationGridThird>
-          <EducationGridSecond
-            ref={second}
-            className={inViewSecond ? "animate" : ""}
-          >
-            <EducationCardHeader>Bachelor</EducationCardHeader>
-            <EducationCardSubheader>
-              Faculty of Informatics Pula
-              <br />
-              Information Technologies
-            </EducationCardSubheader>
-            <EducationCardFooter>2015 - 2019</EducationCardFooter>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://fipu.unipu.hr/fipu/studijski_programi/preddiplomski_sveucilisni_studij_informatika"
+              <EducationCardHeader>Bachelor</EducationCardHeader>
+              <EducationCardSubheader>
+                Faculty of Informatics Pula
+                <br />
+                Information Technologies
+              </EducationCardSubheader>
+              <EducationCardFooter>2015 - 2019</EducationCardFooter>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://fipu.unipu.hr/fipu/studijski_programi/preddiplomski_sveucilisni_studij_informatika"
+              >
+                <EducationCardFooterInfo>
+                  Click for more info.
+                </EducationCardFooterInfo>
+              </a>
+            </EducationGridSecond>
+            <EducationGridFirst
+              ref={first}
+              className={inViewFirst ? "animate" : ""}
             >
-              <EducationCardFooterInfo>
-                Click for more info.
-              </EducationCardFooterInfo>
-            </a>
-          </EducationGridSecond>
-          <EducationGridFirst
-            ref={first}
-            className={inViewFirst ? "animate" : ""}
-          >
-            <EducationCardHeader>High school</EducationCardHeader>
-            <EducationCardSubheader>
-              Technical school Pula
-              <br />
-              Geodetic technician
-            </EducationCardSubheader>
-            <EducationCardFooter>2010 - 2014</EducationCardFooter>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="http://ss-tehnicka-pu.skole.hr/"
-            >
-              <EducationCardFooterInfo>
-                Click for more info.
-              </EducationCardFooterInfo>
-            </a>
-          </EducationGridFirst>
-        </EducationGridContainer>
-      </EducationContainer>
-    </EducationFlexContainer>
+              <EducationCardHeader>High school</EducationCardHeader>
+              <EducationCardSubheader>
+                Technical school Pula
+                <br />
+                Geodetic technician
+              </EducationCardSubheader>
+              <EducationCardFooter>2010 - 2014</EducationCardFooter>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://ss-tehnicka-pu.skole.hr/"
+              >
+                <EducationCardFooterInfo>
+                  Click for more info.
+                </EducationCardFooterInfo>
+              </a>
+            </EducationGridFirst>
+          </EducationGridContainer>
+        </EducationContainer>
+        <Lotti>{View}</Lotti>
+      </EducationFlexContainer>
+    </>
   );
 };
 

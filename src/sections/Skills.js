@@ -1,18 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import appAnim from "../animations/appAnimation.json";
+import { useLottie } from "lottie-react";
 import { useInView } from "react-intersection-observer";
 
 const SkillsContainer = styled.section`
   height: 100%;
   flex-basis: 73%;
-  @media (max-width: 650px) { 
+  @media (max-width: 650px) {
     flex-basis: 100%;
   }
 `;
 const PseudoElement = styled.div`
   height: 100%;
   flex-basis: 27%;
-  @media (max-width: 650px) { 
+  @media (max-width: 650px) {
     height: 0;
     flex-basis: 0;
   }
@@ -21,7 +23,7 @@ const SkillsFlexContainer = styled.div`
   height: 100vh;
   display: flex;
   scroll-snap-align: start;
-  background-color: black;
+
   color: snow;
 `;
 const SkillsGridContainer = styled.div`
@@ -54,15 +56,15 @@ const SkillsGridContainer = styled.div`
       "skills-grid-third"
       "skills-grid-second"
       "skills-grid-first";
-  
-  @media all and (-ms-high-contrast:none) {
-    .container {
-      display: -ms-grid;
-      -ms-grid-columns: 1fr;
-      -ms-grid-rows: 0.2fr repeat(3, 1fr);
+
+    @media all and (-ms-high-contrast: none) {
+      .container {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 0.2fr repeat(3, 1fr);
+      }
     }
-}
-}
+  }
 `;
 const SkillsGridHeader = styled.div`
   display: flex;
@@ -223,6 +225,23 @@ const SkillsCardFooterInfo = styled.p`
   text-align: center;
 `;
 
+const LottiS = styled.div`
+  z-index: -1; // lowest in your page
+  position: absolute; // or static, depending on what you have
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10rem;
+  pointer-events: none;
+  @media (max-width: 650px) {
+    justify-content: center;
+    padding-right: 0;
+  }
+`;
+
 const Skills = () => {
   const [fourth, inViewFourth] = useInView({
     threshold: 0.05,
@@ -237,6 +256,12 @@ const Skills = () => {
   const [first, inViewFirst] = useInView({
     threshold: 0.05,
   });
+  const options = {
+    animationData: appAnim,
+    loop: true,
+    autoplay: true,
+  };
+  const { View } = useLottie(options);
   return (
     <SkillsFlexContainer>
       <PseudoElement></PseudoElement>
@@ -244,11 +269,15 @@ const Skills = () => {
         <SkillsGridContainer>
           <SkillsGridHeader>
             <div>
-            <SkillsHeader  ref={fourth}
-            className={inViewFourth ? "typing-effect" : ""}>Skills</SkillsHeader></div>
+              <SkillsHeader
+                ref={fourth}
+                className={inViewFourth ? "typing-effect" : ""}
+              >
+                Skills
+              </SkillsHeader>
+            </div>
           </SkillsGridHeader>
-          <SkillsGridThird ref={third}
-            className={inViewThird ? "animate" : ""}>
+          <SkillsGridThird ref={third} className={inViewThird ? "animate" : ""}>
             <SkillsCardHeader>Programing</SkillsCardHeader>
             <SkillsCardSubheader>
               HTML
@@ -270,8 +299,10 @@ const Skills = () => {
             <SkillsCardFooter></SkillsCardFooter>
             <SkillsCardFooterInfo></SkillsCardFooterInfo>
           </SkillsGridThird>
-          <SkillsGridSecond ref={second}
-            className={inViewSecond ? "animate" : ""}>
+          <SkillsGridSecond
+            ref={second}
+            className={inViewSecond ? "animate" : ""}
+          >
             <SkillsCardHeader>Quality Assurance</SkillsCardHeader>
             <SkillsCardSubheader>
               Postman
@@ -287,8 +318,7 @@ const Skills = () => {
             <SkillsCardFooter></SkillsCardFooter>
             <SkillsCardFooterInfo></SkillsCardFooterInfo>
           </SkillsGridSecond>
-          <SkillsGridFirst ref={first}
-            className={inViewFirst ? "animate" : ""}>
+          <SkillsGridFirst ref={first} className={inViewFirst ? "animate" : ""}>
             <SkillsCardHeader>Digital skills</SkillsCardHeader>
             <SkillsCardSubheader>
               GIT(GitHub)
@@ -312,6 +342,7 @@ const Skills = () => {
           </SkillsGridFirst>
         </SkillsGridContainer>
       </SkillsContainer>
+      <LottiS>{View}</LottiS>
     </SkillsFlexContainer>
   );
 };
