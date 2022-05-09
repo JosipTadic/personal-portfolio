@@ -240,6 +240,10 @@ const LottiS = styled.div`
     justify-content: center;
     padding-right: 0;
   }
+  @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
+    width: 55%;
+    margin-left: 35%;
+  }
 `;
 
 const Skills = () => {

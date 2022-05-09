@@ -14,7 +14,26 @@ const Container = styled.div`
   height: 100vh;
   top: 0;
   position: fixed;
-  background-color: #102542;
+  background: rgb(11, 0, 199);
+  background: -moz-linear-gradient(
+    126deg,
+    rgba(11, 0, 199, 1) 0%,
+    rgba(14, 0, 85, 1) 35%,
+    rgba(5, 0, 28, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    126deg,
+    rgba(11, 0, 199, 1) 0%,
+    rgba(14, 0, 85, 1) 35%,
+    rgba(5, 0, 28, 1) 100%
+  );
+  background: linear-gradient(
+    126deg,
+    rgba(11, 0, 199, 1) 0%,
+    rgba(14, 0, 85, 1) 35%,
+    rgba(5, 0, 28, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b00c7",endColorstr="#05001c",GradientType=1);
   z-index: 5;
   @media (max-width: 650px) {
     width: 100%;
@@ -334,8 +353,8 @@ const MenuButton = styled.button`
   display: none;
   z-index: 10;
   position: fixed;
-  right: 1%;
-  top: 1%;
+  right: 15px;
+  top: 22px;
   font-size: 1.2rem;
   background: transparent;
   border: 2px solid goldenrod;
@@ -346,7 +365,6 @@ const MenuButton = styled.button`
   &:hover {
     border: 2px solid gold;
   }
-
   @media (max-width: 650px) {
     display: inline-block;
   }
@@ -360,6 +378,7 @@ const Header = ({
   contactActive,
 }) => {
   const [showMenu, setShowMenu] = useState(false);
+
   return (
     <>
       <div>

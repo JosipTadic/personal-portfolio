@@ -64,7 +64,6 @@ const ExperienceGridFourth = styled.div`
   justify-content: space-between;
   flex-direction: column;
   grid-area: experience-grid-fourth;
-
   @media all and (-ms-high-contrast: none) {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
@@ -221,12 +220,9 @@ const ExperienceCardSubheader = styled.h3`
     line-height: 2rem;
     font-size: 1.4rem;
   }
-  @media only screen and (min-device-width: 480px) 
-                   and (max-device-width: 950px) 
-                   and (max-device-height: 600px) 
-                   and (orientation: landscape) {
-                    line-height: 1.5rem;
-                    font-size: 1.25rem;
+  @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
+    line-height: 1.5rem;
+    font-size: 1.25rem;
   }
 `;
 const ExperienceCardFooter = styled.h4`
@@ -281,8 +277,7 @@ const Experience = () => {
             <ExperienceCardSubheader>
               Working on various projects, most of the time working on frontend.{" "}
               <br /> Main technologies: <br />
-              React, 
-              Typescript
+              React, Typescript
             </ExperienceCardSubheader>
             <ExperienceCardFooter>
               January, 2022 - Currently
@@ -298,9 +293,7 @@ const Experience = () => {
             <ExperienceCardSubheader>
               Developing parts of the ERP/booking application with use of:{" "}
               <br />
-              .NET Core - C#, 
-              Angular, 
-              MariaDB{" "}
+              .NET Core - C#, Angular, MariaDB{" "}
             </ExperienceCardSubheader>
             <ExperienceCardFooter>
               August, 2021 - November, 2021 <br />

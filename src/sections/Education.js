@@ -232,6 +232,10 @@ const Lotti = styled.div`
     justify-content: center;
     padding-right: 0;
   }
+  @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
+    width: 30%;
+    margin-left: 41%;
+  }
 `;
 
 const Education = () => {
