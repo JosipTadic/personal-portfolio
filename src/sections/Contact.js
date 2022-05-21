@@ -312,11 +312,10 @@ const Contact = () => {
           <ContactText ref={fifth} className={inViewFifth ? "animate" : ""}>
             <AboutMe>About me: </AboutMe>
             <AboutMeText>
-              My name is Josip Tadić. I consider myself both 🐈 and 🐕 person
-              since I like all animals equally. My hobbies outside of IT
-              world(which takes most of my time) are: Basketball(I played for 10
-              years, even at semi pro level) 🏀, Gym and other sports.
-              <br />
+              My name is Josip Tadić, I am a web developer. <br />
+              My hobbies outside of IT world(which takes most of my time) are:
+              Basketball(I played for 10 years, even at semi pro level) 🏀, Gym
+              and other sports. I consider myself both 🐈 and 🐕 person. <br />
               Besides sports I like to enjoy nature 🌳 and meet new people and
               places.
               <br /> I also like cooking 🍽️ (and eating, ofc 😅) and oldtimer
