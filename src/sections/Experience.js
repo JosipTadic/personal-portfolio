@@ -222,7 +222,7 @@ const ExperienceCardSubheader = styled.h3`
   }
   @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
     line-height: 1.5rem;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 `;
 const ExperienceCardFooter = styled.h4`
@@ -296,7 +296,7 @@ const Experience = () => {
               .NET Core - C#, Angular, MariaDB{" "}
             </ExperienceCardSubheader>
             <ExperienceCardFooter>
-              August, 2021 - November, 2021 <br />
+              June, 2021 - November, 2021 <br />
               Uniline d.o.o. - Remote
             </ExperienceCardFooter>
           </ExperienceGridThird>
@@ -315,7 +315,7 @@ const Experience = () => {
               Writing documentation
             </ExperienceCardSubheader>
             <ExperienceCardFooter>
-              January, 2021 - July, 2021
+              January, 2021 - May, 2021
               <br />
               Uniline d.o.o. - Remote
             </ExperienceCardFooter>

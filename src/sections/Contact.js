@@ -46,6 +46,13 @@ const AboutMeText = styled.h2`
   font-weight: 500;
   text-align: center;
   padding: 15px;
+  @media (max-width: 1750px) {
+    font-size: 1.10rem;
+    line-height: 1.7rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px;
+  }
   @media (max-width: 650px) {
     font-size: 1.25rem;
     line-height: 1.8rem;
@@ -63,7 +70,7 @@ const ContactGrid = styled.div`
   display: grid;
   height: 90%;
   grid-template-columns: repeat(3, minmax(1px, 1fr));
-  grid-template-rows: 1fr 0.5fr 1fr;
+  grid-template-rows: minmax(1px, 0.8fr) minmax(1px, 0.1fr) minmax(1px, 1fr);
   gap: 1rem 1rem;
   grid-template-areas:
     "ContactText ContactText ContactAnimation"
@@ -189,8 +196,11 @@ const ContactAnimationWrapper = styled.div`
 `;
 const ContactAnimationLink = styled.a`
   display: flex;
+  @media (max-width: 1750px) {
+    width: 80%;
+  }
   @media (max-width: 650px) {
-    width: 75%;
+    width: 70%;
   }
   @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
     width: 55%;
@@ -245,9 +255,14 @@ const ContactTextHeader = styled.h4`
   }
 `;
 const ContactImage = styled.img`
-  max-width: 70%;
-  max-height: 90%;
+  max-width: 60%;
+  max-height: 80%;
   border-radius: 25px 5px;
+  @media (max-width: 650px) {
+    max-width: 85%;
+    max-height: 80%;
+    padding-right: 6px;
+  }
   @media only screen and (min-device-width: 480px) and (max-device-width: 950px) and (max-device-height: 600px) and (orientation: landscape) {
     max-width: 45%;
   }
@@ -317,8 +332,7 @@ const Contact = () => {
               Basketball(I played for 10 years, even at semi pro level) 🏀, Gym
               and other sports. I consider myself both 🐈 and 🐕 person. <br />
               Besides sports I like to enjoy nature 🌳 and meet new people and
-              places.
-              <br /> I also like cooking 🍽️ (and eating, ofc 😅) and oldtimer
+              places. I also like cooking 🍽️ (and eating, ofc 😅) and oldtimer
               cars. <br /> I am trying to find the best in people and to be
               inspired by different personalities(doesn't matter sports or
               business).

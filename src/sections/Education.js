@@ -228,6 +228,10 @@ const Lotti = styled.div`
   justify-content: flex-end;
   padding-right: 10rem;
   pointer-events: none;
+  @media (max-width: 1750px) {
+    width: 60%;
+    margin-left: 27%;
+  }
   @media (max-width: 650px) {
     justify-content: center;
     padding-right: 0;
